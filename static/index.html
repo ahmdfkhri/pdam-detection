@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meter Number Reader</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        #image-container { position: relative; margin: 20px 0; border: 1px solid #ccc; }
+        #uploaded-image { max-width: 100%; display: block; }
+        .rectangle { position: absolute; border: 2px dashed red; cursor: move; }
+        .rectangle::after { 
+            content: attr(data-number); 
+            position: absolute; 
+            bottom: -25px; 
+            left: 0; 
+            color: red;
+        }
+        .delete-btn { 
+            position: absolute; 
+            top: -10px; 
+            right: -10px; 
+            background: red; 
+            color: white; 
+            border-radius: 50%; 
+            width: 20px; 
+            height: 20px; 
+            text-align: center; 
+            cursor: pointer; 
+        }
+        button { padding: 8px 15px; margin: 5px; cursor: pointer; }
+        /* Resize handles */
+.resize-handle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: white;
+    border: 1px solid red;
+    z-index: 10;
+}
+
+/* Position each handle */
+.resize-handle.nw { top: -4px; left: -4px; cursor: nw-resize; }
+.resize-handle.n { top: -4px; left: 50%; margin-left: -4px; cursor: n-resize; }
+.resize-handle.ne { top: -4px; right: -4px; cursor: ne-resize; }
+.resize-handle.e { top: 50%; right: -4px; margin-top: -4px; cursor: e-resize; }
+.resize-handle.se { bottom: -4px; right: -4px; cursor: se-resize; }
+.resize-handle.s { bottom: -4px; left: 50%; margin-left: -4px; cursor: s-resize; }
+.resize-handle.sw { bottom: -4px; left: -4px; cursor: sw-resize; }
+.resize-handle.w { top: 50%; left: -4px; margin-top: -4px; cursor: w-resize; }
+
+/* Rectangle styling */
+.rectangle {
+    position: absolute;
+    border: 2px dashed red;
+    cursor: move;
+    background-color: rgba(255, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+.rectangle::after {
+    content: attr(data-number);
+    position: absolute;
+    bottom: -25px;
+    left: 0;
+    color: red;
+    font-size: 12px;
+    white-space: nowrap;
+}
+    </style>
+</head>
+<body>
+    <h1>Meter Number Reader</h1>
+    
+    <input type="file" id="image-upload" accept="image/*">
+    <button id="add-rectangle">Add Rectangle</button>
+    <button id="process-image">Process Image</button>
+    
+    <div id="image-container"></div>
+    <div id="results"></div>
+
+    <script src="static/script.js"></script>
+</body>
+</html>
