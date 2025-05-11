@@ -1,0 +1,26 @@
+# Virtual environment
+.venv/
+
+# Python cache and build files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyx
+*.so
+*.egg-info/
+dist/
+build/
+
+# Environment variables
+.env
+.env.*
+
+# IDE specific files
+.vscode/
+.idea/
+
+# Other
+*.swp
+*.swo
+.DS_Store
