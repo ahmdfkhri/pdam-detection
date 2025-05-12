@@ -10,5 +10,4 @@ Deteksi Meteran PDAM
    - Windows: `.venv\Scripts\activate`
    - macOS/Linux: `source .venv/bin/activate`
 4. Install dependencies: `pip install -r requirements.txt`
-5. Set environment variables (copy .env.example to .env)
 6. Run the app: `flask run`
